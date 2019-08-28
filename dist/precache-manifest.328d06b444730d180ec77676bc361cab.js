@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/gaming-hub/dist/js/about.621f13f7.js"
   },
   {
-    "revision": "fffce2079a73234598b6",
+    "revision": "e36d76e484421cc953b6",
     "url": "/gaming-hub/dist/css/app.99dd9837.css"
   },
   {
-    "revision": "fffce2079a73234598b6",
-    "url": "/gaming-hub/dist/js/app.a7925c65.js"
+    "revision": "e36d76e484421cc953b6",
+    "url": "/gaming-hub/dist/js/app.6a4314c2.js"
   },
   {
     "revision": "fc2c5c5fa94dc1784419",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/gaming-hub/dist/js/chunk-vendors.bb145168.js"
   },
   {
-    "revision": "3e08883935874e7d2f9a7796bbde5285",
+    "revision": "a11063bb64f37ee8eda68910d7b7e1ba",
     "url": "/gaming-hub/dist/index.html"
   },
   {
