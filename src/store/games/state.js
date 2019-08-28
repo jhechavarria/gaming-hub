@@ -1,3 +1,3 @@
 export default {
-    base_url: 'https://jhechavarria.github.com/gaming-hub'
+    base_url: 'https://jhechavarria.github.io/gaming-hub'
 }
