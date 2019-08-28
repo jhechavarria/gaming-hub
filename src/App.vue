@@ -36,7 +36,7 @@ export default {
   padding-top: 56.25%;
   position: relative;
 }
- 
+
 .iframe-container iframe {
    border: 0;
    height: 90%;
@@ -45,7 +45,7 @@ export default {
    top: 0;
    width: 100%;
 }
- 
+
 /* 4x3 Aspect Ratio */
 .iframe-container-4x3 {
   padding-top: 75%;

@@ -1,47 +1,44 @@
 <template>
-  <div>
-    <h1>Home</h1>
+    <div>
+        <h1>Home</h1>
 
-    <v-btn to="/about">About</v-btn>
+        <v-btn to="/about">About</v-btn>
 
+        <v-btn
+            color="primary"
+            dark
+            @click.stop="dialog = true"
+        >Dilema</v-btn>
 
-    <v-btn
-      color="primary"
-      dark
-      @click.stop="dialog = true"
-    >
-      Open Dialog
-    </v-btn>
+        <v-dialog
+            v-model="dialog"
+            full-width
+        >
+            <v-card class="iframe-container">
+                <iframe src="https://jhechavarria.github.com/gaming-hub/games/dilema"></iframe>
+            </v-card>
+        </v-dialog>
 
-    <v-dialog
-      v-model="dialog"
-      full-width
-    >
-      <v-card class="iframe-container">
-        <iframe src="https://jhechavarria.github.com/gaming-hub/games/dilema"></iframe>
-      </v-card>
-    </v-dialog>
-
-  </div>
+    </div>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
-  data() {
-    return {
-      dialog: false,
-      games: {}
+    data: () => {
+        return {
+            dialog: false,
+            games: {}
+        }
+    },
+    created () {
+        axios.get(this.$store.getters['games/base_url']+'/gameslist.json')
+        .then(response => {
+            console.log(typeof response)
+            console.log(response)
+        })
+        .catch(console.error)
     }
-  },
-  created() {
-    axios.get('/gamelist.json')
-    .then(response => {
-      console.log(typeof response)
-      console.log(response)
-    })
-    .catch(console.error)
-  }
 }
 </script>
