@@ -26,7 +26,11 @@ export default {
   name: 'App',
   data: () => ({
     //
-  })
+  }),
+  created () {
+      this.$store.dispatch('games/load')
+      console.log(this.$store.getters['games/games'])
+  }
 }
 </script>
 

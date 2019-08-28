@@ -31,14 +31,6 @@ export default {
             dialog: false,
             games: {}
         }
-    },
-    created () {
-        axios.get(this.$store.getters['games/base_url']+'/gameslist.json')
-        .then(response => {
-            console.log(typeof response)
-            console.log(response)
-        })
-        .catch(console.error)
     }
 }
 </script>
