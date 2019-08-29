@@ -1,3 +1,6 @@
+const path = require('path')
+
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/gaming-hub/' : '/'
+  outputDir: path.resolve(__dirname, './docs'),
+  publicPath: process.env.NODE_ENV === 'production' ? '/gaming-hub/docs' : '/'
 }

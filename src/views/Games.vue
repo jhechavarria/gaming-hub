@@ -1,15 +1,14 @@
 <template>
     <div>
-        <h1>Home</h1>
+        
     </div>
 </template>
 
 <script>
-import axios from 'axios'
 import { mapGetters } from 'vuex'
 
 export default {
-    name: "Home",
+    name: "Games",
     data: () => {
         return {
             dialog: false
@@ -22,3 +21,7 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    
+</style>

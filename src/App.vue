@@ -1,36 +1,32 @@
 <template>
-  <v-app dark>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-app-bar>
-
+  <v-app class="grey lighten-4">
+    <Navbar :gamesList="games" />
     <v-content>
       <router-view></router-view>
     </v-content>
+    <v-overlay v-model="overlay">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </v-app>
 </template>
 
 <script>
+import Navbar from '@/components/Navbar'
+
 export default {
   name: 'App',
+  components: {
+    Navbar
+  },
   data: () => ({
-    //
+    overlay: true,
+    games: {}
   }),
   created () {
-      this.$store.dispatch('games/paginated', { page: 1, itemsPerPage: 30 })
+      this.$store.dispatch('games/load')
       .then(loaded => {
-        console.log(this.$store.getters['games/games'])
+        this.games = this.$store.getters['games/games']
+        this.overlay = false
         console.log('LOADED')
       })
       .catch(console.error)
