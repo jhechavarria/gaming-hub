@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/gaming-hub/precache-manifest.126f36a1d24b4dbe18747756ae9aa2fa.js"
+  "/gaming-hub/precache-manifest.53510478f58e7cb357b988d916a00b51.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "gaming-hub"});

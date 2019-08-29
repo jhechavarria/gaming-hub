@@ -2,7 +2,7 @@
   <div class="about">
     <h1>This is an about page</h1>
     <v-btn to="/">Home</v-btn>
-    <iframe :src="`https://jhechavarria.github.com/gaming-hub/games/`+dir"></iframe>
+    <iframe :src="`https://jhechavarria.github.io/gaming-hub/games/`+dir"></iframe>
   </div>
 </template>
 
