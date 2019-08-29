@@ -28,8 +28,12 @@ export default {
     //
   }),
   created () {
-      this.$store.dispatch('games/load')
-      console.log(this.$store.getters['games/games'])
+      this.$store.dispatch('games/paginated', { page: 1, itemsPerPage: 30 })
+      .then(loaded => {
+        console.log(this.$store.getters['games/games'])
+        console.log('LOADED')
+      })
+      .catch(console.error)
   }
 }
 </script>
