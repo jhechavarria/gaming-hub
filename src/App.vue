@@ -1,12 +1,16 @@
 <template>
   <v-app class="grey lighten-4">
+
     <Navbar :gamesList="games" />
+
     <v-content>
       <router-view></router-view>
     </v-content>
+
     <v-overlay v-model="overlay">
       <v-progress-circular indeterminate size="64"></v-progress-circular>
     </v-overlay>
+
   </v-app>
 </template>
 
