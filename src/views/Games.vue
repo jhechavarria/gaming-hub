@@ -1,8 +1,13 @@
 <template>
     <div class="home">
         <h1 class="subheadint grey-text">Games</h1>
+        <v-text-field
+            v-model="search"
+            name="name"
+            label="Search Game"
+        ></v-text-field>
         <v-container class="my-5">
-            <GamesList :games="games" />
+            <GamesList :games="filteredList" />
         </v-container>
     </div>
 </template>
@@ -18,13 +23,23 @@ export default {
     },
     data: () => {
         return {
-            dialog: false
+            dialog: false,
+            search: ""
         }
     },
     computed: {
         ...mapGetters({
             games: 'games/games'
-        })
+        }),
+        filteredList() {
+            let games = Object.assign({}, this.games)
+            for (let key in games) {
+                let game = games[key]
+                if (!game.name.toLowerCase().includes(this.search.toLowerCase()))
+                    delete games[key]
+            }
+            return games
+        }
     }
 }
 </script>

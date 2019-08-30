@@ -20,7 +20,11 @@
                 <span>{{ game.author }}</span><br>
                 <span class="text--primary">
                     <span>{{ game.description }}</span><br>
-                    <span>v.{{ game.version_name || game.version }}</span>
+                    <span v-if="game.version_name">
+                        v.{{ game.version_name.split(' ')[0] }}
+                        <v-chip small :class="'caption '+game.version_name.split(' ')[1].toLowerCase()">{{ game.version_name.split(' ')[1].toUpperCase() }}</v-chip>
+                    </span>
+                    <span v-else>v.{{ game.version }}</span>
                 </span>
                 </v-card-text>
 
@@ -35,22 +39,48 @@
                 <v-btn
                     text
                     color="orange"
-                    :to="`/play/`+key"
+                    @click="dir=key; game=game; dialog=true"
                 >
                     Play
                 </v-btn>
                 </v-card-actions>
             </v-card>
         </v-col>
+        <GameDialog v-model="dialog" :dir="dir" :game="game" @closed="dialog=false" />
     </v-row>
 </template>
 
 <script>
+import GameDialog from "@/components/GameDialog"
+
 export default {
-    props: ['games']
+    props: {
+        games: {
+            type: Object
+        }
+    },
+    components: {
+        GameDialog
+    },
+    data: () => ({
+        dir: "",
+        game: {},
+        dialog: false
+    })
 }
 </script>
 
 <style scoped>
-    
+.v-chip.prealpha {
+    background: tomato;
+}
+.v-chip.alpha {
+    background: orange;
+}
+.v-chip.beta {
+    background: yellow;
+}
+.v-chip.production {
+    background: green;
+}
 </style>
