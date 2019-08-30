@@ -1,0 +1,20 @@
+{
+    "author": "AntrHaXx",
+    "background": "",
+    "default_locale": "en",
+    "description": "You wanna drive?",
+    "developer": "AntrHaXx",
+    "homepage_url": "https://jhechavarria.github.io/gaming-hub/games/ivory/",
+    "icons": [
+
+    ],
+    "manifest_version": "1.0",
+    "name": "Ivory",
+    "offline_enabled": true,
+    "short_name": "Ivory",
+    "theme": {
+
+    },
+    "version": "0.0.1",
+    "version_name": "0.0.1 production"
+}
