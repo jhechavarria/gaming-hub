@@ -1,0 +1,20 @@
+{
+    "author": "AntrHaXx",
+    "background": "",
+    "default_locale": "en",
+    "description": "Wonderful city in the sky",
+    "developer": "AntrHaXx",
+    "homepage_url": "https://jhechavarria.github.io/gaming-hub/games/citizen/",
+    "icons": [
+
+    ],
+    "manifest_version": "1.0",
+    "name": "Citizen Ken",
+    "offline_enabled": true,
+    "short_name": "Citizen",
+    "theme": {
+
+    },
+    "version": "0.0.1",
+    "version_name": "0.0.1 prealpha"
+}

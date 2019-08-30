@@ -21,10 +21,10 @@
                 <span class="text--primary">
                     <span>{{ game.description }}</span><br>
                     <span v-if="game.version_name">
-                        v.{{ game.version_name.split(' ')[0] }}
-                        <v-chip small :class="'caption '+game.version_name.split(' ')[1].toLowerCase()">{{ game.version_name.split(' ')[1].toUpperCase() }}</v-chip>
+                        <v-chip x-small class="info mr-1">{{ game.version_name.split(' ')[0] }}</v-chip>
+                        <v-chip x-small :class="'caption '+game.version_name.split(' ')[1].toLowerCase()">{{ game.version_name.split(' ')[1].toUpperCase() }}</v-chip>
                     </span>
-                    <span v-else>v.{{ game.version }}</span>
+                    <v-chip x-small v-else class="info">v.{{ game.version }}</v-chip>
                 </span>
                 </v-card-text>
 
