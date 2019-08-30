@@ -6,7 +6,6 @@
         >
             <v-card
                 class="mx-auto"
-                max-width="400"
             >
                 <v-img
                 class="white--text"

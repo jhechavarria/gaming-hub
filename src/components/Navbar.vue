@@ -2,7 +2,6 @@
     <nav>
         <v-app-bar
             app
-            collapse-on-scroll
             elevate-on-scroll
         >
             <v-toolbar-title class="text-uppercase grey-text">
