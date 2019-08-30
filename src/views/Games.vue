@@ -1,45 +1,34 @@
 <template>
     <div class="home">
         <h1 class="subheadint grey-text">Games</h1>
-        <v-text-field
-            v-model="search"
-            name="name"
-            label="Search Game"
-        ></v-text-field>
         <v-container class="my-5">
-            <GamesList :games="filteredList" />
+            <v-btn
+                @click="filters=!filters"
+            >Filters</v-btn>
+            <GamesFilter v-if="filters" :games="games" @filtered="(val) => filteredGames=val" />
+            <GamesList :games="filteredGames" />
         </v-container>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import GamesList from '@/components/GamesList'
+import GamesFilter from '@/components/GamesFilter'
 
 export default {
     name: "Games",
     components: {
-        GamesList
+        GamesList,
+        GamesFilter
     },
-    data: () => {
-        return {
-            dialog: false,
-            search: ""
-        }
-    },
-    computed: {
-        ...mapGetters({
-            games: 'games/games'
-        }),
-        filteredList() {
-            let games = Object.assign({}, this.games)
-            for (let key in games) {
-                let game = games[key]
-                if (!game.name.toLowerCase().includes(this.search.toLowerCase()))
-                    delete games[key]
-            }
-            return games
-        }
+    data: () => ({
+        filters: false,
+        games: {},
+        filteredGames: {}
+    }),
+    created() {
+        this.games = this.$games.all()
+        this.filteredGames = this.games
     }
 }
 </script>

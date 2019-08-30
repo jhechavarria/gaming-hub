@@ -19,12 +19,12 @@
 
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn
+          <v-chip
+            close
             dark
+            small
             @click="value !== undefined ? $emit('closed') : null; open = false"
-          >
-            CLOSE
-          </v-btn>
+          >CLOSE</v-chip>
         </v-card-actions>
       </v-card>
     </v-dialog>

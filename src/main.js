@@ -3,9 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
-import vuetify from './plugins/vuetify'
+import games from '@/plugins/games/index'
+import vuetify from '@/plugins/vuetify'
 import('es6-promise/auto')
 
+Vue.use(games)
 Vue.config.productionTip = false
 
 new Vue({

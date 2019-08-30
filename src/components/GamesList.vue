@@ -72,6 +72,7 @@ export default {
 <style scoped>
 .v-chip.prealpha {
     background: tomato;
+    color: white;
 }
 .v-chip.alpha {
     background: orange;
@@ -81,5 +82,6 @@ export default {
 }
 .v-chip.production {
     background: green;
+    color: white;
 }
 </style>
